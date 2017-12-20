@@ -1,0 +1,32 @@
+version: '2'
+services:
+  DockerRegistry:
+    restart: always
+    image: registry:2
+    ports:
+      - 5000:5000
+    environment:
+      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
+      REGISTRY_HTTP_TLS_KEY: /certs/domain.key
+      REGISTRY_AUTH: htpasswd                                                 
+      REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd                                     
+      REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm                                                 
+    volumes:                                                  
+      - /var/opt:/var/lib/registry  
+      - ./certs:/certs                                                  
+          #- ./auth:/auth
+ 
+  MyNginx:
+    ports:
+      - 8080:80/tcp
+      - 443:443/tcp 
+    tty: true   
+    image: nginx:1.13.5-alpine        
+    working_dir: "/etc/nginx"                         
+    volumes:                    
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf        
+      - ./certs/domain.crt:/etc/ssl/certs/ssl.crt           
+      - ./certs/domain.key:/etc/ssl/certs/ssl.key                                            
+      - ./nginx/log:/var/log/nginx                                                     
+    links:                                     
+      - DockerRegistry:DockerRegistry

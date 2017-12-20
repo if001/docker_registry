@@ -1,0 +1,14 @@
+2017/12/18 02:54:18 [error] 5#5: *3 upstream sent no valid HTTP/1.0 header while reading response header from upstream, client: 45.32.24.6, server: localhost, request: "HEAD /test HTTP/1.1", upstream: "http://172.18.0.3:5000/test", host: "45.32.35.230"
+2017/12/18 02:54:18 [warn] 5#5: *3 upstream sent more data than specified in "Content-Length" header while reading upstream, client: 45.32.24.6, server: localhost, request: "HEAD /test HTTP/1.1", upstream: "http://172.18.0.3:5000/test", host: "45.32.35.230"
+2017/12/18 02:55:35 [error] 5#5: *3 upstream sent no valid HTTP/1.0 header while reading response header from upstream, client: 45.32.24.6, server: localhost, request: "HEAD /test HTTP/1.1", upstream: "http://172.18.0.3:5000/test", host: "45.32.35.230"
+2017/12/18 02:55:35 [warn] 5#5: *3 upstream sent more data than specified in "Content-Length" header while reading upstream, client: 45.32.24.6, server: localhost, request: "HEAD /test HTTP/1.1", upstream: "http://172.18.0.3:5000/test", host: "45.32.35.230"
+2017/12/18 02:55:38 [error] 5#5: *5 upstream sent no valid HTTP/1.0 header while reading response header from upstream, client: 45.32.24.6, server: localhost, request: "HEAD / HTTP/1.1", upstream: "http://172.18.0.3:5000/", host: "45.32.35.230"
+2017/12/18 02:55:38 [warn] 5#5: *5 upstream sent more data than specified in "Content-Length" header while reading upstream, client: 45.32.24.6, server: localhost, request: "HEAD / HTTP/1.1", upstream: "http://172.18.0.3:5000/", host: "45.32.35.230"
+2017/12/19 06:09:22 [emerg] 1#1: unknown directive "chunkin" in /etc/nginx/conf.d/default.conf:32
+2017/12/19 06:10:11 [emerg] 1#1: open() "/etc/nginx/docker-registry.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/default.conf:41
+2017/12/19 06:13:17 [emerg] 1#1: open() "/etc/nginx/docker-registry.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/default.conf:41
+2017/12/19 06:15:05 [emerg] 1#1: open() "/etc/nginx/docker-registry.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/default.conf:41
+2017/12/19 06:20:03 [emerg] 1#1: open() "/etc/nginx/docker-registry.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/default.conf:51
+2017/12/19 06:21:36 [emerg] 1#1: open() "/etc/nginx/docker-registry.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/default.conf:41
+2017/12/19 06:21:57 [emerg] 1#1: open() "/etc/nginx/docker-registry.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/default.conf:41
+2017/12/19 06:22:38 [emerg] 1#1: BIO_new_file("/etc/ssl/certs/docker-registry") failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/ssl/certs/docker-registry','r') error:2006D080:BIO routines:BIO_new_file:no such file)
